@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vortexis — Software house especializada em sites, sistemas, aplicativos e automações sob medida." />
+  <title>Vortexis | Soluções Digitais sob Medida</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ════════════════ NAV ════════════════ -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">
+        <img
+          src="../logo_vortexis_sem_fundo.png"
+          alt="Vortexis"
+          onerror="this.style.display='none'"
+        />
+        <span class="nav-logo-text">VORTEXIS</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#diferenciais">Diferenciais</a></li>
+        <li><a href="#processo">Processo</a></li>
+        <li><a href="#contato" class="nav-cta">Solicitar Orçamento</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section id="hero">
+    <canvas id="vortex-canvas"></canvas>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">Tecnologia que gera resultados</div>
+
+      <h1 class="hero-title syne">
+        Construímos<br />
+        <span class="gradient-text-anim">soluções digitais</span><br />
+        que geram resultado
+      </h1>
+
+      <p class="hero-sub">
+        Desenvolvemos sistemas, aplicativos e plataformas que ajudam empresas a
+        automatizar processos, aumentar vendas e escalar operações.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contato" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+          Solicitar orçamento
+        </a>
+        <a href="#servicos" class="btn-secondary">
+          Conhecer serviços
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    </div><!-- /hero-grid -->
+  </section>
+
+  <!-- ════════════════ SOBRE ════════════════ -->
+  <section id="sobre">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Texto -->
+        <div class="fade-in">
+          <span class="section-tag">Sobre a Vortexis</span>
+          <h2 class="section-title syne">
+            Tecnologia que <span class="gradient-text">impulsiona</span> negócios
+          </h2>
+          <p class="section-sub">
+            Somos uma software house focada em transformar necessidades reais em produtos
+            digitais modernos, eficientes e escaláveis. Do primeiro contato à entrega final,
+            trabalhamos com dedicação e dentro do prazo.
+          </p>
+
+          <div class="values-grid">
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#145DFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Entrega pontual</h4>
+                <p>Prazos cumpridos com qualidade garantida</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#7B2CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Qualidade premium</h4>
+                <p>Código limpo e soluções de alto nível</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#145DFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Comunicação clara</h4>
+                <p>Transparência em cada etapa do projeto</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#7B2CFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+                </svg>
+              </div>
+              <div class="value-text">
+                <h4>Escalável</h4>
+                <p>Soluções que crescem com o seu negócio</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards visuais -->
+        <div class="about-visual fade-in fade-in-delay-2">
+          <div class="about-accent"></div>
+
+          <div class="about-card">
+            <div class="about-card-title gradient-text">🌀 Nosso símbolo</div>
+            <p class="about-card-text">
+              O vórtice da nossa logo representa convergência: inovação, desenvolvimento e estratégia
+              se unindo para criar sistemas que impulsionam negócios. Cada projeto é um ponto de
+              convergência único para o sucesso do cliente.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-title">🎯 Nossa missão</div>
+            <p class="about-card-text">
+              Facilitar processos, acelerar o crescimento e levar empresas para o próximo nível
+              por meio de tecnologia acessível e de alto impacto — seja uma landing page, um
+              sistema completo ou uma automação inteligente.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <div class="about-card-title">📍 Quem atendemos</div>
+            <p class="about-card-text">
+              Micro e pequenos empreendedores que precisam crescer com tecnologia, sem abrir mão
+              de qualidade e prazo. A Vortexis tem o projeto certo para cada tamanho de negócio.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ SERVIÇOS CAROUSEL ════════════════ -->
+  <section id="servicos" class="carousel-section">
+
+    <!-- Controls bar -->
+    <div class="carousel-controls-bar">
+      <div class="container carousel-controls-inner">
+
+        <div class="carousel-header">
+          <span class="section-tag">Nossos Serviços</span>
+          <h2 class="carousel-heading syne">
+            Tudo que sua empresa precisa,<br/>
+            <span class="gradient-text">em um só lugar</span>
+          </h2>
+        </div>
+
+        <div class="carousel-nav-group">
+          <button class="carousel-pause" aria-label="Pausar slideshow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <rect x="6" y="4" width="4" height="16" rx="1"/>
+              <rect x="14" y="4" width="4" height="16" rx="1"/>
+            </svg>
+          </button>
+          <button class="carousel-arrow carousel-prev" aria-label="Slide anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <span class="carousel-counter">
+            <span class="carousel-current">1</span>
+            <span class="carousel-sep">/</span>
+            <span class="carousel-total">4</span>
+          </span>
+          <button class="carousel-arrow carousel-next" aria-label="Próximo slide">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Slides track -->
+    <div class="carousel-track">
+
+      <!-- ── Slide 1: Sites & Landing Pages ── -->
+      <div class="carousel-slide active" data-index="0">
+        <div class="slide-visual">
+          <div class="slide-visual-glow blue"></div>
+          <svg class="slide-svg" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Browser chrome -->
+            <rect x="40" y="55" width="400" height="270" rx="14" fill="rgba(20,93,255,0.07)" stroke="rgba(20,93,255,0.22)" stroke-width="1.5"/>
+            <rect x="40" y="55" width="400" height="42" rx="14" fill="rgba(20,93,255,0.14)"/>
+            <rect x="40" y="86" width="400" height="11" fill="rgba(20,93,255,0.14)"/>
+            <circle cx="64" cy="76" r="6" fill="rgba(255,90,90,0.45)"/>
+            <circle cx="82" cy="76" r="6" fill="rgba(255,200,50,0.45)"/>
+            <circle cx="100" cy="76" r="6" fill="rgba(60,215,90,0.45)"/>
+            <rect x="118" y="68" width="184" height="16" rx="8" fill="rgba(255,255,255,0.06)"/>
+            <!-- Hero content block -->
+            <rect x="60" y="118" width="172" height="22" rx="5" fill="rgba(80,190,255,0.55)"/>
+            <rect x="60" y="152" width="240" height="9" rx="4" fill="rgba(255,255,255,0.14)"/>
+            <rect x="60" y="169" width="200" height="9" rx="4" fill="rgba(255,255,255,0.09)"/>
+            <rect x="60" y="186" width="216" height="9" rx="4" fill="rgba(255,255,255,0.07)"/>
+            <!-- CTA button -->
+            <rect x="60" y="212" width="100" height="32" rx="8" fill="rgba(20,93,255,0.55)" stroke="rgba(80,190,255,0.4)" stroke-width="1"/>
+            <rect x="172" y="212" width="76" height="32" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <!-- Right image placeholder -->
+            <rect x="282" y="114" width="138" height="106" rx="10" fill="rgba(20,93,255,0.13)" stroke="rgba(80,190,255,0.2)" stroke-width="1"/>
+            <circle cx="351" cy="167" r="28" fill="rgba(20,93,255,0.18)"/>
+            <!-- Stats row -->
+            <rect x="60" y="268" width="72" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <rect x="142" y="268" width="72" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <rect x="224" y="268" width="72" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <!-- Accent dots -->
+            <circle cx="432" cy="70" r="5" fill="rgba(80,190,255,0.4)"/>
+            <circle cx="60" cy="48" r="4" fill="rgba(20,93,255,0.3)"/>
+            <circle cx="420" cy="340" r="6" fill="rgba(123,44,255,0.25)"/>
+          </svg>
+        </div>
+        <div class="slide-content">
+          <h2 class="syne">Sites &amp; Landing Pages</h2>
+          <p>Criamos presença digital que converte. Do design moderno à entrega otimizada para SEO, desenvolvemos sites institucionais, landing pages de alta conversão e lojas virtuais completas.</p>
+          <div class="service-tags">
+            <span class="service-tag">Landing Page</span>
+            <span class="service-tag">E-commerce</span>
+            <span class="service-tag">Institucional</span>
+            <span class="service-tag">SEO</span>
+          </div>
+          <a href="#contato" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Solicitar projeto
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Slide 2: Sistemas Web ── -->
+      <div class="carousel-slide" data-index="1">
+        <div class="slide-visual">
+          <div class="slide-visual-glow purple"></div>
+          <svg class="slide-svg" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Dashboard frame -->
+            <rect x="28" y="40" width="424" height="288" rx="14" fill="rgba(123,44,255,0.07)" stroke="rgba(123,44,255,0.22)" stroke-width="1.5"/>
+            <rect x="28" y="40" width="424" height="44" rx="14" fill="rgba(123,44,255,0.14)"/>
+            <rect x="28" y="73" width="424" height="11" fill="rgba(123,44,255,0.14)"/>
+            <!-- Sidebar -->
+            <rect x="28" y="84" width="88" height="244" fill="rgba(123,44,255,0.07)" stroke="rgba(123,44,255,0.12)" stroke-width="1"/>
+            <rect x="40" y="104" width="64" height="10" rx="4" fill="rgba(180,123,255,0.4)"/>
+            <rect x="40" y="124" width="56" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
+            <rect x="40" y="142" width="60" height="8" rx="4" fill="rgba(255,255,255,0.09)"/>
+            <rect x="40" y="160" width="52" height="8" rx="4" fill="rgba(255,255,255,0.07)"/>
+            <rect x="40" y="178" width="58" height="8" rx="4" fill="rgba(255,255,255,0.07)"/>
+            <!-- KPI cards row -->
+            <rect x="128" y="96" width="92" height="56" rx="8" fill="rgba(123,44,255,0.12)" stroke="rgba(123,44,255,0.25)" stroke-width="1"/>
+            <rect x="232" y="96" width="92" height="56" rx="8" fill="rgba(20,93,255,0.12)" stroke="rgba(20,93,255,0.25)" stroke-width="1"/>
+            <rect x="336" y="96" width="92" height="56" rx="8" fill="rgba(80,190,255,0.09)" stroke="rgba(80,190,255,0.22)" stroke-width="1"/>
+            <!-- Chart area -->
+            <rect x="128" y="168" width="200" height="140" rx="8" fill="rgba(123,44,255,0.07)" stroke="rgba(123,44,255,0.15)" stroke-width="1"/>
+            <polyline points="144,288 164,260 184,272 204,240 224,252 244,218 264,230 284,200 304,215" stroke="rgba(123,44,255,0.7)" stroke-width="2" fill="none"/>
+            <polyline points="144,295 164,275 184,282 204,258 224,265 244,238 264,248 284,222 304,234" stroke="rgba(80,190,255,0.45)" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+            <!-- Table -->
+            <rect x="340" y="168" width="88" height="140" rx="8" fill="rgba(20,93,255,0.07)" stroke="rgba(20,93,255,0.14)" stroke-width="1"/>
+            <rect x="350" y="182" width="68" height="6" rx="3" fill="rgba(80,190,255,0.4)"/>
+            <rect x="350" y="198" width="60" height="5" rx="3" fill="rgba(255,255,255,0.14)"/>
+            <rect x="350" y="213" width="55" height="5" rx="3" fill="rgba(255,255,255,0.1)"/>
+            <rect x="350" y="228" width="62" height="5" rx="3" fill="rgba(255,255,255,0.08)"/>
+            <rect x="350" y="243" width="50" height="5" rx="3" fill="rgba(255,255,255,0.07)"/>
+            <!-- Accent -->
+            <circle cx="174" cy="52" r="5" fill="rgba(123,44,255,0.5)"/>
+            <circle cx="432" cy="52" r="4" fill="rgba(80,190,255,0.35)"/>
+          </svg>
+        </div>
+        <div class="slide-content">
+          <h2 class="syne">Sistemas Web</h2>
+          <p>Plataformas e sistemas sob medida para automatizar, controlar e escalar seu negócio. Desenvolvemos CRMs, ERPs, dashboards e portais com foco em usabilidade e performance.</p>
+          <div class="service-tags">
+            <span class="service-tag">CRM</span>
+            <span class="service-tag">ERP</span>
+            <span class="service-tag">Dashboard</span>
+            <span class="service-tag">API REST</span>
+          </div>
+          <a href="#contato" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Solicitar projeto
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Slide 3: Aplicativos Mobile ── -->
+      <div class="carousel-slide" data-index="2">
+        <div class="slide-visual">
+          <div class="slide-visual-glow blue"></div>
+          <svg class="slide-svg" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Phone frame left -->
+            <rect x="100" y="30" width="108" height="210" rx="18" fill="rgba(20,93,255,0.09)" stroke="rgba(20,93,255,0.3)" stroke-width="1.5"/>
+            <rect x="114" y="48" width="80" height="136" rx="6" fill="rgba(20,93,255,0.12)"/>
+            <!-- App UI inside left phone -->
+            <rect x="120" y="56" width="68" height="10" rx="3" fill="rgba(80,190,255,0.5)"/>
+            <rect x="120" y="74" width="68" height="48" rx="6" fill="rgba(20,93,255,0.25)"/>
+            <rect x="120" y="130" width="30" height="28" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <rect x="158" y="130" width="30" height="28" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <rect x="120" y="166" width="68" height="6" rx="3" fill="rgba(255,255,255,0.12)"/>
+            <rect x="120" y="178" width="50" height="5" rx="3" fill="rgba(255,255,255,0.08)"/>
+            <!-- Notch -->
+            <rect x="140" y="38" width="28" height="6" rx="3" fill="rgba(20,93,255,0.35)"/>
+            <!-- Home bar -->
+            <rect x="136" y="228" width="36" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+
+            <!-- Phone frame right (larger, main focus) -->
+            <rect x="240" y="18" width="130" height="252" rx="22" fill="rgba(123,44,255,0.09)" stroke="rgba(123,44,255,0.32)" stroke-width="2"/>
+            <rect x="256" y="38" width="98" height="196" rx="8" fill="rgba(123,44,255,0.13)"/>
+            <!-- App UI inside right phone -->
+            <rect x="264" y="50" width="82" height="14" rx="4" fill="rgba(180,123,255,0.5)"/>
+            <circle cx="305" cy="96" r="28" fill="rgba(123,44,255,0.3)" stroke="rgba(180,123,255,0.4)" stroke-width="1.5"/>
+            <rect x="266" y="134" width="78" height="8" rx="3" fill="rgba(255,255,255,0.18)"/>
+            <rect x="272" y="150" width="66" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+            <rect x="266" y="170" width="34" height="22" rx="6" fill="rgba(123,44,255,0.5)" stroke="rgba(180,123,255,0.4)" stroke-width="1"/>
+            <rect x="308" y="170" width="34" height="22" rx="6" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+            <rect x="266" y="206" width="78" height="16" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <rect x="266" y="228" width="78" height="16" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+            <!-- Notch right -->
+            <rect x="292" y="28" width="32" height="7" rx="3.5" fill="rgba(123,44,255,0.4)"/>
+            <!-- Home bar right -->
+            <rect x="289" y="256" width="42" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+
+            <!-- Floating badges -->
+            <rect x="48" y="148" width="72" height="26" rx="13" fill="rgba(20,93,255,0.18)" stroke="rgba(80,190,255,0.35)" stroke-width="1"/>
+            <rect x="376" y="68" width="72" height="26" rx="13" fill="rgba(123,44,255,0.16)" stroke="rgba(180,123,255,0.3)" stroke-width="1"/>
+            <rect x="376" y="220" width="60" height="26" rx="13" fill="rgba(80,190,255,0.13)" stroke="rgba(80,190,255,0.28)" stroke-width="1"/>
+            <!-- Connecting lines -->
+            <line x1="208" y1="135" x2="240" y2="135" stroke="rgba(20,93,255,0.25)" stroke-width="1" stroke-dasharray="4 3"/>
+            <circle cx="386" cy="162" r="24" fill="rgba(123,44,255,0.07)" stroke="rgba(123,44,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+          </svg>
+        </div>
+        <div class="slide-content">
+          <h2 class="syne">Aplicativos Mobile</h2>
+          <p>Apps nativos e híbridos para iOS e Android com design intuitivo e experiência fluida. Desenvolvemos desde MVPs até produtos completos, prontos para publicação nas lojas.</p>
+          <div class="service-tags">
+            <span class="service-tag">iOS</span>
+            <span class="service-tag">Android</span>
+            <span class="service-tag">PWA</span>
+            <span class="service-tag">React Native</span>
+          </div>
+          <a href="#contato" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Solicitar projeto
+          </a>
+        </div>
+      </div>
+
+      <!-- ── Slide 4: Automações ── -->
+      <div class="carousel-slide" data-index="3">
+        <div class="slide-visual">
+          <div class="slide-visual-glow blue"></div>
+          <svg class="slide-svg" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Source node -->
+            <rect x="28" y="140" width="88" height="64" rx="10" fill="rgba(20,93,255,0.12)" stroke="rgba(20,93,255,0.38)" stroke-width="1.5"/>
+            <rect x="40" y="156" width="52" height="10" rx="4" fill="rgba(80,190,255,0.6)"/>
+            <rect x="40" y="174" width="40" height="7" rx="4" fill="rgba(255,255,255,0.2)"/>
+            <!-- Connector line left -->
+            <path d="M116 172 C140 172 148 172 164 172" stroke="rgba(20,93,255,0.45)" stroke-width="1.8" stroke-dasharray="5 5"/>
+            <polygon points="162,167 174,172 162,177" fill="rgba(20,93,255,0.65)"/>
+            <!-- Central processing node -->
+            <rect x="174" y="96" width="132" height="162" rx="16" fill="rgba(20,93,255,0.1)" stroke="rgba(80,190,255,0.4)" stroke-width="2"/>
+            <!-- Lightning bolt (automation symbol) -->
+            <polygon points="240,138 226,174 240,169 226,212 256,168 240,173 256,133" fill="rgba(80,190,255,0.8)"/>
+            <!-- Connector top-right -->
+            <path d="M306 140 C338 140 342 118 358 110" stroke="rgba(20,93,255,0.45)" stroke-width="1.8" stroke-dasharray="5 5"/>
+            <polygon points="358,104 366,114 356,116" fill="rgba(20,93,255,0.65)"/>
+            <!-- Connector mid-right -->
+            <path d="M306 180 C336 180 340 180 358 180" stroke="rgba(123,44,255,0.45)" stroke-width="1.8" stroke-dasharray="5 5"/>
+            <polygon points="356,175 368,180 356,185" fill="rgba(123,44,255,0.65)"/>
+            <!-- Connector bottom-right -->
+            <path d="M306 220 C336 220 342 240 358 248" stroke="rgba(123,44,255,0.45)" stroke-width="1.8" stroke-dasharray="5 5"/>
+            <polygon points="358,256 355,245 366,246" fill="rgba(123,44,255,0.65)"/>
+            <!-- Output node top -->
+            <rect x="364" y="76" width="88" height="56" rx="10" fill="rgba(20,93,255,0.12)" stroke="rgba(20,93,255,0.3)" stroke-width="1.5"/>
+            <rect x="376" y="93" width="52" height="9" rx="4" fill="rgba(80,190,255,0.55)"/>
+            <rect x="376" y="109" width="40" height="6" rx="4" fill="rgba(255,255,255,0.18)"/>
+            <!-- Output node mid -->
+            <rect x="364" y="152" width="88" height="56" rx="10" fill="rgba(123,44,255,0.1)" stroke="rgba(123,44,255,0.28)" stroke-width="1.5"/>
+            <rect x="376" y="169" width="52" height="9" rx="4" fill="rgba(180,123,255,0.55)"/>
+            <rect x="376" y="185" width="40" height="6" rx="4" fill="rgba(255,255,255,0.18)"/>
+            <!-- Output node bottom -->
+            <rect x="364" y="228" width="88" height="56" rx="10" fill="rgba(123,44,255,0.1)" stroke="rgba(123,44,255,0.25)" stroke-width="1.5"/>
+            <rect x="376" y="245" width="52" height="9" rx="4" fill="rgba(180,123,255,0.5)"/>
+            <rect x="376" y="261" width="40" height="6" rx="4" fill="rgba(255,255,255,0.15)"/>
+            <!-- Floating accent -->
+            <circle cx="240" cy="54" r="6" fill="rgba(80,190,255,0.3)"/>
+            <circle cx="72" cy="70" r="5" fill="rgba(20,93,255,0.25)"/>
+            <circle cx="16" cy="230" r="7" fill="rgba(20,93,255,0.2)"/>
+            <circle cx="462" cy="310" r="5" fill="rgba(123,44,255,0.3)"/>
+            <!-- Rotating orbit ring around center -->
+            <ellipse cx="240" cy="177" rx="78" ry="78" stroke="rgba(20,93,255,0.08)" stroke-width="1" stroke-dasharray="3 9"/>
+          </svg>
+        </div>
+        <div class="slide-content">
+          <h2 class="syne">Automações</h2>
+          <p>Elimine tarefas repetitivas e ganhe tempo para o que realmente importa. Integramos sistemas, automatizamos fluxos e criamos bots que trabalham por você 24/7.</p>
+          <div class="service-tags">
+            <span class="service-tag">Integração</span>
+            <span class="service-tag">Bots</span>
+            <span class="service-tag">Workflows</span>
+            <span class="service-tag">IA</span>
+          </div>
+          <a href="#contato" class="btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            Solicitar projeto
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /carousel-track -->
+
+    <!-- Progress bar -->
+    <div class="carousel-progress-bar">
+      <div class="carousel-progress-fill"></div>
+    </div>
+
+  </section>
+
+  <!-- ════════════════ DIFERENCIAIS ════════════════ -->
+  <section id="diferenciais">
+    <div class="diff-bg"></div>
+    <div class="container">
+      <div class="diff-layout">
+
+        <!-- Lista numerada -->
+        <div class="fade-in">
+          <span class="section-tag">Nossos Diferenciais</span>
+          <h2 class="section-title syne">
+            Por que escolher<br/>
+            <span class="gradient-text">a Vortexis?</span>
+          </h2>
+          <p class="section-sub" style="margin-bottom: 48px;">
+            Não somos apenas uma empresa de tecnologia. Somos parceiros estratégicos
+            comprometidos com o crescimento real do seu negócio.
+          </p>
+
+          <div class="diff-list">
+            <div class="diff-item">
+              <div class="diff-number">01</div>
+              <div class="diff-content">
+                <h3>Soluções 100% personalizadas</h3>
+                <p>Nada de templates genéricos. Cada projeto é desenvolvido do zero, pensado exclusivamente para as suas necessidades.</p>
+              </div>
+            </div>
+            <div class="diff-item">
+              <div class="diff-number">02</div>
+              <div class="diff-content">
+                <h3>Comunicação direta e transparente</h3>
+                <p>Acompanhamento em cada fase. Você sempre sabe o que está sendo feito e quando será entregue.</p>
+              </div>
+            </div>
+            <div class="diff-item">
+              <div class="diff-number">03</div>
+              <div class="diff-content">
+                <h3>Tecnologia moderna e escalável</h3>
+                <p>Usamos as melhores tecnologias do mercado para garantir que sua solução cresça junto com o seu negócio.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cards de destaque -->
+        <div class="diff-cards fade-in fade-in-delay-2">
+          <div class="diff-card">
+            <div class="diff-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div class="diff-card-text">
+              <h4>Entrega dentro do prazo</h4>
+              <p>Compromisso real com os prazos combinados</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-card-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="diff-card-text">
+              <h4>Suporte pós-entrega</h4>
+              <p>Acompanhamos você mesmo após o lançamento</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+              </svg>
+            </div>
+            <div class="diff-card-text">
+              <h4>Preço justo e acessível</h4>
+              <p>Qualidade premium sem pagar por excesso</p>
+            </div>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-card-icon purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <div class="diff-card-text">
+              <h4>Foco em resultados</h4>
+              <p>Cada linha de código pensada para gerar resultado</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PROCESSO ════════════════ -->
+  <section id="processo">
+    <div class="container">
+
+      <div class="process-header fade-in">
+        <span class="section-tag">Como Trabalhamos</span>
+        <h2 class="section-title syne">
+          Nosso processo de <span class="gradient-text">trabalho</span>
+        </h2>
+        <p class="section-sub">
+          Do primeiro contato até a entrega, cada etapa é planejada para garantir
+          clareza, qualidade e eficiência.
+        </p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step fade-in fade-in-delay-1">
+          <div class="step-circle"><span class="step-num">01</span></div>
+          <h4>Briefing</h4>
+          <p>Entendemos o seu negócio, objetivos e necessidades com clareza.</p>
+        </div>
+        <div class="process-step fade-in fade-in-delay-2">
+          <div class="step-circle"><span class="step-num">02</span></div>
+          <h4>Proposta</h4>
+          <p>Apresentamos escopo, prazo e investimento de forma transparente.</p>
+        </div>
+        <div class="process-step fade-in fade-in-delay-3">
+          <div class="step-circle"><span class="step-num">03</span></div>
+          <h4>Design</h4>
+          <p>Criamos protótipos visuais para aprovação antes de codificar.</p>
+        </div>
+        <div class="process-step fade-in fade-in-delay-4">
+          <div class="step-circle"><span class="step-num">04</span></div>
+          <h4>Desenvolvimento</h4>
+          <p>Construímos com tecnologias modernas e atualizações constantes.</p>
+        </div>
+        <div class="process-step fade-in fade-in-delay-4">
+          <div class="step-circle"><span class="step-num">05</span></div>
+          <h4>Entrega</h4>
+          <p>Lançamento, suporte e acompanhamento pós-entrega garantidos.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════ CTA FINAL ════════════════ -->
+  <section id="contato">
+    <div class="cta-bg"></div>
+    <div class="cta-glow-1"></div>
+    <div class="cta-glow-2"></div>
+    <div class="cta-border"></div>
+
+    <div class="container">
+      <div class="cta-inner fade-in">
+        <span class="section-tag">Vamos começar</span>
+        <h2 class="section-title syne">
+          Pronto para <span class="gradient-text">transformar</span><br/>
+          sua ideia em realidade?
+        </h2>
+        <p>
+          Entre em contato agora e receba uma proposta personalizada. Sem compromisso,
+          sem burocracia — só tecnologia a serviço do seu crescimento.
+        </p>
+        <div class="cta-buttons">
+          <!-- Substitua o número pelo WhatsApp real da Vortexis -->
+          <a
+            href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20meu%20projeto."
+            target="_blank"
+            rel="noopener"
+            class="btn-primary"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Solicitar orçamento
+          </a>
+          <a href="mailto:contato@vortexis.com.br" class="btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Enviar e-mail
+          </a>
+        </div>
+        <div class="cta-features">
+          <div class="cta-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Resposta em até 24h
+          </div>
+          <div class="cta-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Orçamento gratuito
+          </div>
+          <div class="cta-feature">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Sem compromisso
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <img
+            src="../logo_vortexis_sem_fundo.png"
+            alt="Vortexis"
+            onerror="this.style.display='none'"
+          />
+        </div>
+        <span class="footer-copy">© 2025 Vortexis. Todos os direitos reservados.</span>
+        <ul class="footer-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+# Ignorar arquivos gerados durante desenvolvimento
+__pycache__/
+*.py[cod]
+*.egg-info/
+.vscode/
+.DS_Store
+npm-debug.log*
+.env
