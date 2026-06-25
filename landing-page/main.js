@@ -394,7 +394,7 @@
     '.process-card, .bento-card, .stat-card, .diff-card'
   );
 
-  cards.forEach(card => {
+  if (cards.length) cards.forEach(card => {
     let raf = null;
 
     card.addEventListener('mousemove', (e) => {
@@ -414,5 +414,252 @@
       card.style.transform = '';
       card.style.transition = '';
     });
+  });
+})();
+
+
+
+/* ═══════════════════════════════════════════
+   CTA CIRCUIT BOARD ANIMATION
+═══════════════════════════════════════════ */
+(function initCtaCircuit() {
+  var canvas = document.getElementById('cta-canvas');
+  if (!canvas) return;
+  var ctx = canvas.getContext('2d');
+  var section = document.getElementById('contato');
+  if (!section) return;
+
+  var W, H, rafId = null, active = false, t = 0;
+
+  /* grid config */
+  var COLS, ROWS, CELL;
+  var nodes = [];   /* {x,y,active,brightness} */
+  var pulses = [];  /* {col,row,dir,progress,col_idx} */
+
+  var COLORS = [
+    [20,  93,  255],
+    [80,  190, 255],
+    [123, 44,  255]
+  ];
+
+  function resize() {
+    W = canvas.width  = section.clientWidth;
+    H = canvas.height = section.clientHeight;
+    CELL = window.innerWidth < 768 ? 60 : 80;
+    COLS = Math.floor(W / CELL) + 1;
+    ROWS = Math.floor(H / CELL) + 1;
+    buildGrid();
+  }
+
+  function buildGrid() {
+    nodes = [];
+    for (var r = 0; r < ROWS; r++) {
+      for (var c = 0; c < COLS; c++) {
+        nodes.push({
+          x: c * CELL + (W - (COLS - 1) * CELL) / 2,
+          y: r * CELL + (H - (ROWS - 1) * CELL) / 2,
+          brightness: 0,
+          col_idx: Math.floor(Math.random() * COLORS.length)
+        });
+      }
+    }
+  }
+
+  function getNode(c, r) {
+    if (c < 0 || c >= COLS || r < 0 || r >= ROWS) return null;
+    return nodes[r * COLS + c];
+  }
+
+  function spawnPulse() {
+    /* random starting node on edge or interior */
+    var dir  = Math.random() < 0.5 ? 0 : 1;  /* 0=horizontal,1=vertical */
+    var col_idx = Math.floor(Math.random() * COLORS.length);
+    if (dir === 0) {
+      var row = Math.floor(Math.random() * ROWS);
+      pulses.push({ col: 0, row: row, dir: 0, progress: 0, col_idx: col_idx, maxCol: COLS });
+    } else {
+      var col = Math.floor(Math.random() * COLS);
+      pulses.push({ col: col, row: 0, dir: 1, progress: 0, col_idx: col_idx, maxRow: ROWS });
+    }
+  }
+
+  function tick() {
+    t += 0.016;
+    ctx.clearRect(0, 0, W, H);
+
+    /* spawn pulses */
+    if (Math.random() < 0.04 && pulses.length < 18) spawnPulse();
+
+    /* draw grid dots (dim) */
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.brightness = Math.max(0, n.brightness - 0.04);
+      var b = 0.06 + n.brightness * 0.6;
+      var col = COLORS[n.col_idx];
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',' + b + ')';
+      ctx.fill();
+    }
+
+    /* draw grid lines (very dim) */
+    ctx.lineWidth = 0.5;
+    for (var r = 0; r < ROWS; r++) {
+      for (var c = 0; c < COLS - 1; c++) {
+        var na = getNode(c, r), nb = getNode(c + 1, r);
+        if (!na || !nb) continue;
+        ctx.beginPath();
+        ctx.moveTo(na.x, na.y);
+        ctx.lineTo(nb.x, nb.y);
+        ctx.strokeStyle = 'rgba(20,93,255,0.06)';
+        ctx.stroke();
+      }
+    }
+    for (var c2 = 0; c2 < COLS; c2++) {
+      for (var r2 = 0; r2 < ROWS - 1; r2++) {
+        var na2 = getNode(c2, r2), nb2 = getNode(c2, r2 + 1);
+        if (!na2 || !nb2) continue;
+        ctx.beginPath();
+        ctx.moveTo(na2.x, na2.y);
+        ctx.lineTo(nb2.x, nb2.y);
+        ctx.strokeStyle = 'rgba(20,93,255,0.06)';
+        ctx.stroke();
+      }
+    }
+
+    /* update & draw pulses */
+    var alive = [];
+    for (var p = 0; p < pulses.length; p++) {
+      var pulse = pulses[p];
+      pulse.progress += 0.035;
+
+      var col = COLORS[pulse.col_idx];
+      var R = col[0], G = col[1], B = col[2];
+
+      if (pulse.dir === 0) {
+        /* horizontal */
+        var seg = Math.floor(pulse.progress);
+        var frac = pulse.progress - seg;
+        var c1 = pulse.col + seg;
+        var c2b = c1 + 1;
+        if (c1 >= pulse.maxCol) continue;  /* dead */
+        alive.push(pulse);
+
+        /* light up passed nodes */
+        for (var s = 0; s <= seg && s < pulse.maxCol; s++) {
+          var nn = getNode(pulse.col + s, pulse.row);
+          if (nn) { nn.brightness = 1; nn.col_idx = pulse.col_idx; }
+        }
+
+        /* glowing trace on current segment */
+        var na3 = getNode(c1, pulse.row);
+        var nb3 = getNode(c2b, pulse.row);
+        if (na3 && nb3) {
+          /* tail glow */
+          var grd = ctx.createLinearGradient(na3.x, na3.y, nb3.x, nb3.y);
+          grd.addColorStop(0,    'rgba(' + R + ',' + G + ',' + B + ',0)');
+          grd.addColorStop(0.3,  'rgba(' + R + ',' + G + ',' + B + ',0.35)');
+          grd.addColorStop(frac, 'rgba(' + R + ',' + G + ',' + B + ',0.9)');
+          grd.addColorStop(Math.min(frac + 0.01, 1), 'rgba(' + R + ',' + G + ',' + B + ',0)');
+
+          ctx.beginPath();
+          ctx.moveTo(na3.x, na3.y);
+          ctx.lineTo(nb3.x, nb3.y);
+          ctx.strokeStyle = grd;
+          ctx.lineWidth = 2.5;
+          ctx.stroke();
+
+          /* bright head dot */
+          var hx = na3.x + (nb3.x - na3.x) * frac;
+          var hy = na3.y + (nb3.y - na3.y) * frac;
+          var hgrd = ctx.createRadialGradient(hx, hy, 0, hx, hy, 12);
+          hgrd.addColorStop(0, 'rgba(' + R + ',' + G + ',' + B + ',1)');
+          hgrd.addColorStop(0.4,'rgba(' + R + ',' + G + ',' + B + ',0.6)');
+          hgrd.addColorStop(1, 'rgba(' + R + ',' + G + ',' + B + ',0)');
+          ctx.beginPath();
+          ctx.arc(hx, hy, 12, 0, Math.PI * 2);
+          ctx.fillStyle = hgrd;
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(hx, hy, 3, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255,255,255,0.95)';
+          ctx.fill();
+        }
+      } else {
+        /* vertical */
+        var seg2 = Math.floor(pulse.progress);
+        var frac2 = pulse.progress - seg2;
+        var r1 = pulse.row + seg2;
+        var r2c = r1 + 1;
+        if (r1 >= pulse.maxRow) continue;
+        alive.push(pulse);
+
+        for (var s2 = 0; s2 <= seg2 && s2 < pulse.maxRow; s2++) {
+          var nn2 = getNode(pulse.col, pulse.row + s2);
+          if (nn2) { nn2.brightness = 1; nn2.col_idx = pulse.col_idx; }
+        }
+
+        var na4 = getNode(pulse.col, r1);
+        var nb4 = getNode(pulse.col, r2c);
+        if (na4 && nb4) {
+          var grd2 = ctx.createLinearGradient(na4.x, na4.y, nb4.x, nb4.y);
+          grd2.addColorStop(0,     'rgba(' + R + ',' + G + ',' + B + ',0)');
+          grd2.addColorStop(0.3,   'rgba(' + R + ',' + G + ',' + B + ',0.35)');
+          grd2.addColorStop(frac2, 'rgba(' + R + ',' + G + ',' + B + ',0.9)');
+          grd2.addColorStop(Math.min(frac2 + 0.01, 1), 'rgba(' + R + ',' + G + ',' + B + ',0)');
+
+          ctx.beginPath();
+          ctx.moveTo(na4.x, na4.y);
+          ctx.lineTo(nb4.x, nb4.y);
+          ctx.strokeStyle = grd2;
+          ctx.lineWidth = 2.5;
+          ctx.stroke();
+
+          var hx2 = na4.x + (nb4.x - na4.x) * frac2;
+          var hy2 = na4.y + (nb4.y - na4.y) * frac2;
+          var hgrd2 = ctx.createRadialGradient(hx2, hy2, 0, hx2, hy2, 12);
+          hgrd2.addColorStop(0, 'rgba(' + R + ',' + G + ',' + B + ',1)');
+          hgrd2.addColorStop(0.4,'rgba(' + R + ',' + G + ',' + B + ',0.6)');
+          hgrd2.addColorStop(1, 'rgba(' + R + ',' + G + ',' + B + ',0)');
+          ctx.beginPath();
+          ctx.arc(hx2, hy2, 12, 0, Math.PI * 2);
+          ctx.fillStyle = hgrd2;
+          ctx.fill();
+          ctx.beginPath();
+          ctx.arc(hx2, hy2, 3, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255,255,255,0.95)';
+          ctx.fill();
+        }
+      }
+    }
+    pulses = alive;
+
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function start() {
+    active = true;
+    resize();
+    /* pre-spawn a few pulses */
+    for (var i = 0; i < 4; i++) spawnPulse();
+    tick();
+  }
+
+  function stop() {
+    active = false;
+    cancelAnimationFrame(rafId);
+  }
+
+  var obs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting && !active) start();
+      else if (!e.isIntersecting && active) stop();
+    });
+  }, { threshold: 0.05 });
+  obs.observe(section);
+
+  window.addEventListener('resize', function() {
+    if (!active) return;
+    resize();
   });
 })();

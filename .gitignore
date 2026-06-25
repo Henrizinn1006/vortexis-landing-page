@@ -1,4 +1,3 @@
-# Ignorar arquivos gerados durante desenvolvimento
 __pycache__/
 *.py[cod]
 *.egg-info/
