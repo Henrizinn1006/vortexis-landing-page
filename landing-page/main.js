@@ -1,18 +1,3 @@
-/* ═══════════════════════════════════════════════════════════
-   VORTEXIS — main.js
-   Módulos:
-     1. Vortex Animation — 2 braços espirais com dashes (estilo logo)
-     2. Navbar scroll effect
-     3. Hamburger menu mobile
-     4. Fade-in on scroll (IntersectionObserver)
-     5. Smooth scroll
-   ═══════════════════════════════════════════════════════════ */
-
-/* ══════════════════════════════════════════════════════════
-   1. VORTEX ANIMATION — partículas pequenas em espiral
-   Estilo Accenture: pontos minúsculos distribuídos ao longo
-   de 2 braços espirais, azul-ciano → roxo, rotação suave.
-   ══════════════════════════════════════════════════════════ */
 (function initVortex() {
   const canvas = document.getElementById('vortex-canvas');
   if (!canvas) return;
@@ -23,7 +8,7 @@
   /* ── Espiral ──────────────────────────────────────── */
   const ARMS      = 2;
   const TURNS     = 1.55;
-  const ROT_SPEED = 0.000065; // mais lento — movimento quase imperceptível
+  const ROT_SPEED = 0.000065;
 
   /* ── Partículas ───────────────────────────────────── */
   const N         = 1200;   // total de pontos
@@ -35,7 +20,7 @@
   const C_BLUE   = [20,  93,  255];
   const C_PURPLE = [123, 44,  255];
 
-  /* Pré-gera partículas — cada uma com fase e velocidade de piscar próprias */
+  /* Pré-gera partículas*/
   const pts = Array.from({ length: N }, () => {
     const t = Math.random();
     return {
@@ -83,7 +68,7 @@
     lastT = ts;
     globalAngle += ROT_SPEED * dt;
 
-    /* Limpa o frame completamente (sem comet-trail — estilo Accenture) */
+    /* Limpa o frame completamente */
     ctx.fillStyle = 'rgb(5,8,16)';
     ctx.fillRect(0, 0, W, H);
 
@@ -102,9 +87,7 @@
       const x = vx + radius * Math.cos(angle);
       const y = vy + radius * Math.sin(angle);
 
-      /* Envelope: apaga suavemente nas bordas */
       const env     = Math.pow(Math.sin(p.t * Math.PI * 0.90 + 0.10), 0.30);
-      /* Piscar individual — cada partícula tem seu próprio ritmo */
       const twinkle = 0.65 + 0.35 * Math.sin(ts * p.twinkleSpd + p.phase);
       const alpha   = p.alpha * env * twinkle;
       if (alpha < 0.025) continue;
@@ -117,7 +100,6 @@
     }
     ctx.restore();
 
-    /* ── Brilho central em 3 camadas (núcleo → halo → aura) ── */
     const pulse = 0.78 + 0.22 * Math.sin(ts * 0.0008);
 
     // Aura exterior — grande e suave
@@ -131,7 +113,7 @@
     ctx.arc(vx, vy, auraR, 0, Math.PI * 2);
     ctx.fill();
 
-    // Halo médio — azul brilhante
+    // Halo médio
     const haloR = maxR * 0.22 * pulse;
     const halo  = ctx.createRadialGradient(vx, vy, 0, vx, vy, haloR);
     halo.addColorStop(0,   `rgba(80,190,255,${0.30 * pulse})`);
@@ -142,7 +124,7 @@
     ctx.arc(vx, vy, haloR, 0, Math.PI * 2);
     ctx.fill();
 
-    // Núcleo — ponto branco-azulado intenso
+    // Núcleo
     const coreR = maxR * 0.05 * pulse;
     const core  = ctx.createRadialGradient(vx, vy, 0, vx, vy, coreR);
     core.addColorStop(0,   `rgba(210,235,255,${0.80 * pulse})`);
@@ -170,9 +152,6 @@
 })();
 
 
-/* ══════════════════════════════════════════════════════════
-   2. NAVBAR — blur + background on scroll
-   ══════════════════════════════════════════════════════════ */
 (function initNavbar() {
   const navbar = document.getElementById('navbar');
   if (!navbar) return;
@@ -186,9 +165,6 @@
 })();
 
 
-/* ══════════════════════════════════════════════════════════
-   3. HAMBURGER MENU (mobile)
-   ══════════════════════════════════════════════════════════ */
 (function initHamburger() {
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('nav-links');
@@ -216,9 +192,7 @@
 })();
 
 
-/* ══════════════════════════════════════════════════════════
-   4. FADE-IN ON SCROLL (IntersectionObserver)
-   ══════════════════════════════════════════════════════════ */
+/* FADE-IN ON SCROLL */
 (function initFadeIn() {
   const els = document.querySelectorAll('.fade-in');
   if (!els.length) return;
@@ -239,11 +213,6 @@
 })();
 
 
-/* ══════════════════════════════════════════════════════════
-   6. CAROUSEL — Serviços (estilo Accenture)
-   Auto-play 5.5s, pause/play, prev/next, touch swipe,
-   progress bar, fade-up transitions entre slides.
-   ══════════════════════════════════════════════════════════ */
 (function initCarousel() {
   const section = document.getElementById('servicos');
   if (!section) return;
@@ -263,11 +232,9 @@
   let startTs = null;
   let rafId   = null;
 
-  /* Icons */
   const ICON_PAUSE = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`;
   const ICON_PLAY  = `<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>`;
 
-  /* ── Go to slide by index ── */
   function goTo(idx) {
     const prev = current;
     current = ((idx % slides.length) + slides.length) % slides.length;
@@ -286,7 +253,7 @@
     if (progFill) progFill.style.width = '0%';
   }
 
-  /* ── Tick (RAF loop) ── */
+  /* Tick */
   function tick(ts) {
     if (!playing) return;
     if (!startTs) startTs = ts;
@@ -316,7 +283,7 @@
     }
   }
 
-  /* ── Button listeners ── */
+  /* Button listeners */
   pauseBtn.addEventListener('click', () => setPlaying(!playing));
 
   prevBtn.addEventListener('click', () => {
@@ -329,7 +296,7 @@
     if (playing) { cancelAnimationFrame(rafId); rafId = requestAnimationFrame(tick); }
   });
 
-  /* ── Touch swipe ── */
+  /* Touch swipe */
   let touchX = 0;
   section.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
   section.addEventListener('touchend', e => {
@@ -352,9 +319,7 @@
 })();
 
 
-/* ══════════════════════════════════════════════════════════
-   5. SMOOTH SCROLL (for older browsers without CSS support)
-   ══════════════════════════════════════════════════════════ */
+/* SMOOTH SCROLL */
 (function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -363,6 +328,91 @@
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
       }
+    });
+  });
+})();
+
+
+/* EXTENDED SCROLL ANIMATIONS (fade-up, fade-left, fade-right, scale-in) */
+(function initExtendedAnimations() {
+  const els = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .scale-in');
+  if (!els.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  els.forEach(el => observer.observe(el));
+})();
+
+
+/* ANIMATED COUNTERS */
+(function initCounters() {
+  const counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1600;
+    const start = performance.now();
+
+    function step(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  counters.forEach(c => observer.observe(c));
+})();
+
+
+/* CURSOR PARALLAX TILT (desktop only) */
+(function initTilt() {
+  if (window.matchMedia('(hover: none)').matches) return;
+
+  const cards = document.querySelectorAll(
+    '.process-card, .bento-card, .stat-card, .diff-card'
+  );
+
+  cards.forEach(card => {
+    let raf = null;
+
+    card.addEventListener('mousemove', (e) => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const dx = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+        const dy = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+        card.style.transform = `translateY(-6px) rotateX(${-dy * 3.5}deg) rotateY(${dx * 3.5}deg)`;
+        card.style.transformStyle = 'preserve-3d';
+        card.style.transition = 'transform 0.1s ease, border-color 0.35s, box-shadow 0.35s';
+      });
+    });
+
+    card.addEventListener('mouseleave', () => {
+      if (raf) cancelAnimationFrame(raf);
+      card.style.transform = '';
+      card.style.transition = '';
     });
   });
 })();
