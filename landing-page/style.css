@@ -698,7 +698,6 @@ nav.scrolled {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
-  margin-top: 16px;
 }
 
 .bento-card {
@@ -726,20 +725,27 @@ nav.scrolled {
   background-position: center;
 }
 
+.bento-what-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
 .bento-what-icon {
-  width: 52px; height: 52px;
+  width: 48px; height: 48px;
   border-radius: 12px;
   background: rgba(20,93,255,0.15);
   border: 1px solid rgba(20,93,255,0.25);
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 20px;
+  flex-shrink: 0;
 }
 
 .bento-what h3 {
   font-family: 'Syne', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 0;
 }
 
 .bento-list {
