@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   background: var(--black);
   color: var(--white);
   overflow-x: hidden;
@@ -38,7 +38,7 @@ body {
 ::selection { background: var(--purple); color: #fff; }
 
 /* TYPOGRAPHY HELPERS */
-.syne { font-family: 'Syne', sans-serif; }
+.syne { font-family: 'Space Grotesk', sans-serif; }
 
 .gradient-text {
   background: var(--gradient);
@@ -129,7 +129,7 @@ nav.scrolled {
 .nav-logo-text {
   /* sempre visível — complementa a logo */
   display: block;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.25rem;
   font-weight: 800;
   letter-spacing: 0.06em;
@@ -204,6 +204,7 @@ nav.scrolled {
 
 /* HERO */
 #hero {
+  background: var(--black);
   position: relative;
   min-height: 100vh;          /* nunca menor que a viewport */
   display: flex;
@@ -276,7 +277,7 @@ nav.scrolled {
 }
 
 .hero-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(1.9rem, 3vw, 2.8rem);
   font-weight: 800;
   line-height: 1.15;
@@ -356,7 +357,7 @@ nav.scrolled {
 .stat-item { display: flex; flex-direction: column; gap: 4px; }
 
 .stat-number {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 2rem;
   font-weight: 800;
   background: var(--gradient);
@@ -383,7 +384,7 @@ nav.scrolled {
 }
 
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
   line-height: 1.15;
@@ -434,7 +435,7 @@ nav.scrolled {
 .about-card:last-child { margin-bottom: 0; }
 
 .about-card-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 12px;
@@ -553,7 +554,7 @@ nav.scrolled {
 .pillar-icon.purple svg { stroke: var(--purple); }
 
 .pillar-content h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 6px;
@@ -657,7 +658,7 @@ nav.scrolled {
 }
 
 .service-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 12px;
@@ -742,7 +743,7 @@ nav.scrolled {
 }
 
 .bento-what h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   margin-bottom: 0;
@@ -775,7 +776,7 @@ nav.scrolled {
 }
 
 .bento-metric-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1;
@@ -813,7 +814,7 @@ nav.scrolled {
 }
 
 .bento-diff-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 12px;
@@ -887,7 +888,7 @@ nav.scrolled {
 }
 
 .diff-number {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 2.5rem;
   font-weight: 800;
   line-height: 1;
@@ -901,7 +902,7 @@ nav.scrolled {
 }
 
 .diff-content h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 8px;
@@ -1007,7 +1008,7 @@ nav.scrolled {
 }
 
 .step-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.2rem;
   font-weight: 800;
   background: var(--gradient);
@@ -1017,7 +1018,7 @@ nav.scrolled {
 }
 
 .process-step h4 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 8px;
@@ -1073,7 +1074,7 @@ nav.scrolled {
 }
 
 .process-card-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
   line-height: 1;
@@ -1107,7 +1108,7 @@ nav.scrolled {
 }
 
 .process-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 14px;
@@ -1244,6 +1245,14 @@ nav.scrolled {
 
 .cta-feature svg { width: 16px; height: 16px; color: var(--blue); }
 
+.cta-price-note {
+  margin-top: 28px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
 /* FOOTER */
 footer {
   background: #030508;
@@ -1263,7 +1272,7 @@ footer {
 .footer-logo img { height: 36px; width: auto; }
 .footer-logo-text {
   display: none;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 800;
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -1375,7 +1384,7 @@ footer {
 }
 
 .slide-content h2 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: clamp(2rem, 3.2vw, 3rem);
   font-weight: 800;
   line-height: 1.06;
@@ -1414,421 +1423,110 @@ footer {
     min-height: auto;
     position: relative;
   }
-  .carousel-track { min-height: auto; overflow: visible; }
-  .slide-visual { display: none; }
-  .slide-content { padding: 40px 24px; }
+  .carousel-track { min-height: auto; o
+
+/* ══════════════════════════════════════
+   O QUE VOCÊ GANHA — res-*
+══════════════════════════════════════ */
+#resultados {
+  background: var(--black);
 }
 
-.carousel-controls-bar {
-  padding-bottom: 28px;
-}
-
-.carousel-controls-inner {
+.res-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 32px;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 32px;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.25s, transform 0.25s;
+  position: relative;
+  overflow: hidden;
 }
 
-.carousel-header .section-tag { margin-bottom: 12px; }
+.res-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(20,93,255,0.04) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
 
-.carousel-heading {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.7rem, 2.6vw, 2.5rem);
+.res-card:hover {
+  border-color: rgba(20, 93, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+.res-card:hover::before {
+  opacity: 1;
+}
+
+.res-num {
+  font-size: 3rem;
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1;
+  margin-bottom: 4px;
   letter-spacing: -0.02em;
 }
 
-/* Navigation group (pause + arrows + counter) */
-.carousel-nav-group {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  padding-bottom: 4px;
-}
-
-.carousel-pause {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--white);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, border-color 0.2s;
-  margin-right: 6px;
-}
-
-.carousel-pause:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.22);
-}
-
-.carousel-arrow {
-  width: 42px; height: 42px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: var(--white);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s, border-color 0.2s;
-}
-
-.carousel-arrow:hover {
-  background: rgba(20,93,255,0.18);
-  border-color: rgba(20,93,255,0.42);
-}
-
-.carousel-counter {  font-family: 'Syne', sans-serif;
-  font-size: 0.8rem;
+.res-icon-row {
   color: var(--grey);
-  letter-spacing: 0.05em;
+  margin-bottom: 4px;
 }
 
-/* =====================================================
-   MOBILE RESPONSIVENESS — 768px e abaixo
-   ===================================================== */
-@media (max-width: 768px) {
-
-  /* CONTAINER */
-  .container {
-    padding: 0 20px;
-  }
-
-  /* SECTIONS */
-  section {
-    padding: 80px 0;
-  }
-
-  #sobre {
-    padding: 80px 0;
-  }
-
-  #contato {
-    padding: 80px 0;
-  }
-
-  /* NAV — mostrar hamburger e esconder links */
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(5, 8, 16, 0.97);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 32px;
-    z-index: 999;
-    display: none;
-  }
-
-  .nav-links.open {
-    display: flex;
-  }
-
-  .nav-links a {
-    font-size: 1.2rem;
-  }
-
-  .nav-cta {
-    font-size: 1.1rem !important;
-    padding: 12px 32px !important;
-  }
-
-  /* HERO — coluna única, texto centralizado */
-  .hero-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-content {
-    max-width: 100%;
-    text-align: center;
-  }
-
-  .hero-badge {
-    margin: 0 auto 28px;
-  }
-
-  .hero-sub {
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero-buttons {
-    justify-content: center;
-  }
-
-  #hero {
-    padding: 110px 0 72px;
-    align-items: flex-start;
-  }
-
-  /* Overlay adaptado para mobile (texto sobre o vórtice) */
-  .hero-overlay {
-    background: rgba(5, 8, 16, 0.62);
-  }
-
-  /* SOBRE */
-  .about-header {
-    max-width: 100%;
-  }
-
-  .about-header-sub {
-    max-width: 100%;
-  }
-
-  /* BENTO — padding reduzido */
-  .bento-card {
-    padding: 24px;
-  }
-
-  .bento-metric {
-    min-height: 130px;
-  }
-
-  .bento-metric-num {
-    font-size: 2.4rem;
-  }
-
-  /* DIFERENCIAIS — coluna única (breakpoint AUSENTE no original) */
-  .diff-layout {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  /* SERVIÇOS CAROUSEL */
-  .carousel-controls-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  /*
-   * FIX CRÍTICO: O breakpoint original muda slides para position:relative,
-   * mas todos os 4 slides ficam no fluxo normal empilhados verticalmente.
-   * Os 3 inativos (opacity:0) ainda ocupam espaço → ~900px de vazio.
-   * Solução: esconder slides inativos com display:none.
-   */
-  .carousel-slide {
-    display: none;
-    position: relative;
-    grid-template-columns: 1fr;
-    min-height: 0;
-    opacity: 1;
-    transform: none;
-    transition: none;
-    pointer-events: none;
-  }
-
-  .carousel-slide.active {
-    display: grid;
-    grid-template-columns: 1fr;
-    opacity: 1;
-    transform: none;
-    pointer-events: all;
-    animation: mobile-slide-in 0.3s ease;
-  }
-
-  .carousel-slide.leaving {
-    display: none;
-  }
-
-  @keyframes mobile-slide-in {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  .carousel-track {
-    min-height: auto;
-    overflow: visible;
-  }
-
-  .slide-visual {
-    display: none;
-  }
-
-  .slide-content {
-    padding: 32px 20px 40px;
-  }
-
-  .slide-content h2 {
-    font-size: clamp(1.7rem, 5.5vw, 2.2rem);
-    margin-bottom: 16px;
-  }
-
-  .slide-content p {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .slide-content .service-tags {
-    margin-bottom: 28px;
-  }
-
-  .carousel-progress-bar {
-    margin-top: 24px;
-  }
-
-  /* PROCESSO */
-  .process-header {
-    margin-bottom: 48px;
-  }
-
-  .process-card {
-    padding: 28px;
-  }
-
-  /* CTA — botões empilhados e centralizados */
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cta-buttons .btn-primary,
-  .cta-buttons .btn-secondary {
-    width: 100%;
-    max-width: 360px;
-    justify-content: center;
-    padding: 16px 32px;
-  }
-
-  .cta-features {
-    gap: 16px;
-    justify-content: flex-start;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* FOOTER */
-  .footer-inner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-
-  .footer-links {
-    justify-content: center;
-  }
+.res-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.35;
 }
 
-/* =====================================================
-   MOBILE RESPONSIVENESS — 480px e abaixo (smartphones pequenos)
-   ===================================================== */
+.res-desc {
+  font-size: 0.9rem;
+  color: var(--grey);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+}
+
+@media (max-width: 600px) {
+  .res-num { font-size: 2.2rem; }
+}
+
+/* ══════════════════════════════════════
+   PARA QUEM É — vortex diagram
+══════════════════════════════════════ */
+
+
+
+
+
+
+/* Diagram */
+
+#pq-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+
+
+/* Nodes */
+
+
+
+@media (max-width: 900px) {
+}
+
 @media (max-width: 480px) {
-
-  /* CONTAINER */
-  .container {
-    padding: 0 16px;
-  }
-
-  /* SECTIONS */
-  section {
-    padding: 64px 0;
-  }
-
-  #sobre {
-    padding: 64px 0;
-  }
-
-  #contato {
-    padding: 64px 0;
-  }
-
-  /* HERO */
-  #hero {
-    padding: 96px 0 60px;
-  }
-
-  .hero-title {
-    font-size: clamp(1.7rem, 7.5vw, 2.2rem);
-  }
-
-  /* BOTÕES */
-  .btn-primary,
-  .btn-secondary {
-    padding: 14px 24px;
-    font-size: 0.9rem;
-  }
-
-  /* SECTION TITLE */
-  .section-title {
-    font-size: clamp(1.65rem, 7vw, 2.4rem);
-  }
-
-  /* BENTO */
-  .bento-card {
-    padding: 20px;
-  }
-
-  .bento-metric {
-    min-height: 110px;
-  }
-
-  .bento-metric-num {
-    font-size: 2rem;
-  }
-
-  /* DIFERENCIAIS */
-  .diff-number {
-    font-size: 2rem;
-    width: 40px;
-  }
-
-  /* CAROUSEL */
-  .carousel-heading {
-    font-size: clamp(1.4rem, 6vw, 1.8rem);
-  }
-
-  .slide-content {
-    padding: 24px 16px 32px;
-  }
-
-  .slide-content h2 {
-    font-size: clamp(1.55rem, 6.5vw, 2rem);
-  }
-
-  /* PROCESSO */
-  .process-card {
-    padding: 22px;
-  }
-
-  .process-card-num {
-    font-size: 2.2rem;
-  }
-
-  /* CTA */
-  .cta-inner .section-title {
-    font-size: clamp(1.65rem, 7vw, 2.8rem);
-  }
-
-  .cta-buttons .btn-primary,
-  .cta-buttons .btn-secondary {
-    max-width: 100%;
-  }
-
-  .cta-inner p {
-    font-size: 0.98rem;
-  }
-
-  /* FOOTER */
-  .footer-copy {
-    font-size: 0.78rem;
-  }
 }
+
+
